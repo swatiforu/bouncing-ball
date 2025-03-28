@@ -19,19 +19,22 @@ body {
     font: bold 3rem 'Arial', sans-serif;
     color: white;
     margin-bottom: 20px;
+    color: #ff6b6b;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     z-index: 2;
     position: absolute;
 }
 
 .ball {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(186, 71, 71);
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(255, 120, 120, 1) 0%, rgba(255, 200, 100, 1) 100%);
     border-radius: 50%;
     position: absolute;
-    bottom: 0;
+    bottom: 10%;
     z-index: 2;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .gif-background {
@@ -55,7 +58,7 @@ body {
 }
 
 .gif1 {
-    opacity: 1; /* Make the first GIF visible initially */
+    opacity: 1;
 }
 
 @keyframes bounce {
