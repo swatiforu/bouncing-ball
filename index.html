@@ -10,7 +10,7 @@
     <iframe width="100%" height="100%" 
         src="https://www.youtube.com/embed/z9Ug-3qhrwY?autoplay=1&mute=1&loop=1&playlist=z9Ug-3qhrwY" 
         frameborder="0" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
+</iframe>
     <p id="counter">0</p>
     <div class="ball"></div>
     <script>
@@ -18,12 +18,13 @@
             document.querySelectorAll(".ball").forEach(ball => {
                 let counter = document.getElementById("counter").textContent;
                 document.getElementById("counter").textContent = (Number(counter)+1);
+                
                 ball.style.animation = "bounce 1s ease-in-out";
                 setTimeout(() => {
                     ball.style.animation = "";
                 }, 1000);
             });
         });
-    </script>
+        </script>
 </body>
 </html>
