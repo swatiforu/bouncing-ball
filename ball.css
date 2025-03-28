@@ -1,10 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
-    width: 100vh;
+    display: flex;
+    width: 100vw;
     height: 100vh;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    justify-content: center;
+    align-items: center;
 }
 
 #counter{
-    font: bold 2rem sans-serif;
+    font: bold 3rem 'Arial', sans-serif;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 .ball{
     width: 50px;
@@ -16,14 +28,14 @@ body{
 }
 
 .bounce{
-    animation: bounce 1s ease-in-out;
+    animation: bounce 3s ease-in-out;
 }
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0vh);
     }
     50% {
-        transform: translateY(-50vh);
+        transform: translateY(-80vh);
     }
     
 }
