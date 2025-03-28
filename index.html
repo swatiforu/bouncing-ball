@@ -7,12 +7,24 @@
     <link rel="stylesheet" href="ball.css">
 </head>
 <body>
-    <video autoplay muted loop id="bg-video">
-        <source src="video.mp4" type="video/webm">
+    <video autoplay muted loop playsinline id="bg-video" preload="metadata">
+        <source src="output.mp4" type="video/mp4">
     </video>
     <p id="counter">0</p>
     <div class="ball"></div>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('bg-video');
+            var promise = video.play();
+            
+            if (promise !== undefined) {
+                promise.catch(error => {
+                    // Auto-play was prevented
+                    video.muted = true;
+                    video.play();
+                });
+            }
+        });
         document.body.addEventListener("click", () => {
             document.querySelectorAll(".ball").forEach(ball => {
                 let counter = document.getElementById("counter").textContent;
