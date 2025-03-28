@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="ball.css">
 </head>
 <body>
-    <!-- <video id="bg-video" playsinline muted loop preload="auto"> -->
-        <!-- <source src="output.mp4" type="video/mp4"> -->
-        <!-- <source src="output.webm" type="video/webm"> -->
-    <!-- </video> -->
     <p id="counter">0</p>
     <div class="ball"></div>
+
+    <div class="gif-background">
+        <img src="gig.gif" alt="GIF 1" class="gif1">
+        <img src="gif2.gif" alt="GIF 2" class="gif2">
+    </div>
+
     <script>
         document.body.addEventListener("click", () => {
             document.querySelectorAll(".ball").forEach(ball => {
@@ -25,6 +27,20 @@
                 }, 1000);
             });
         });
-        </script>
+
+        // JavaScript to swap GIFs every 10 seconds
+        let currentGif = 1;
+        setInterval(() => {
+            if (currentGif === 1) {
+                document.querySelector(".gif1").style.opacity = 0;
+                document.querySelector(".gif2").style.opacity = 1;
+                currentGif = 2;
+            } else {
+                document.querySelector(".gif2").style.opacity = 0;
+                document.querySelector(".gif1").style.opacity = 1;
+                currentGif = 1;
+            }
+        }, 10000); // Switch GIFs every 10 seconds
+    </script>
 </body>
 </html>
